@@ -8,7 +8,6 @@ def collector():
 
 
 @pytest.fixture
-def collector_with_book_scream():
-    collector = BooksCollector()
+def collector_with_book_scream(collector):
     collector.add_new_book("Крик")
     return collector
