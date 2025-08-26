@@ -95,3 +95,11 @@ class TestBooksCollector:
         collector_with_book_scream.add_book_in_favorites("Крик")
         collector_with_book_scream.delete_book_from_favorites("Капитошка")
         assert len(collector_with_book_scream.get_list_of_favorites_books()) == 1
+
+    def test_get_books_genre_all_books_genre(self, collector_with_book_scream):
+        collector_with_book_scream.set_book_genre("Крик", "Ужасы")
+        assert len(collector_with_book_scream.get_books_genre()) == 1
+
+    def test_get_book_genre_get_book_by_name(self, collector_with_book_scream):
+        collector_with_book_scream.set_book_genre("Крик", "Ужасы")
+        assert collector_with_book_scream.get_book_genre("Крик") == "Ужасы"
